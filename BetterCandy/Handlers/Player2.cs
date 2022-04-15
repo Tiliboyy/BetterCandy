@@ -27,7 +27,6 @@ namespace BetterCandy.Handlers
             {
                 ev.IsAllowed = false;
                 ev.Player.TryAddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Pink);
-                Debug.Log("Cu de anao pelado sem roupa sexooxoxoxoaxoasxosdaosdao");
             }
         }
     }
