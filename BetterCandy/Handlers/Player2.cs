@@ -1,4 +1,5 @@
-﻿using Exiled.Events.EventArgs;
+﻿using Exiled.API.Features;
+using Exiled.Events.EventArgs;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,10 +22,12 @@ namespace BetterCandy.Handlers
             }
 
             int RandomNumber = Random.Range(1, Plugin.Singleton.Config.MaxRandomizer);
-            
+
             if (RandomNumber == plugin.Config.ChoosenNumber)
             {
+                ev.IsAllowed = false;
                 ev.Player.TryAddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Pink);
+                Debug.Log("Cu de anao pelado sem roupa sexooxoxoxoaxoasxosdaosdao");
             }
         }
     }
