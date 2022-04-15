@@ -9,7 +9,7 @@ namespace BetterCandy
     {
         public override Version RequiredExiledVersion { get; } = new Version(5, 0, 0);
         public override string Name { get; } = "BetterCandy";
-        public override Version Version { get; } = new Version(1, 0, 5);
+        public override Version Version { get; } = new Version(1, 1, 0);
 
         public static Plugin Singleton;
         public Handlers.Player2 player;
