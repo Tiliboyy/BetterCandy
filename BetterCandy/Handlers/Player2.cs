@@ -1,7 +1,4 @@
-﻿using Exiled.API.Features;
-using Exiled.Events.EventArgs;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Exiled.Events.EventArgs;
 using UnityEngine;
 namespace BetterCandy.Handlers
 {
@@ -21,13 +18,13 @@ namespace BetterCandy.Handlers
                 ev.ShouldSever = false;
             }
 
-            int RandomNumber = Random.Range(1, Plugin.Singleton.Config.MaxRandomizer);
+            int RandomNumber = Random.Range(1, plugin.Config.MaxRandomizer);
 
             if (RandomNumber == plugin.Config.ChoosenNumber)
             {
                 ev.IsAllowed = false;
                 ev.Player.TryAddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Pink);
             }
-        }
+        }                    
     }
 }
