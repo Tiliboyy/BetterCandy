@@ -7,8 +7,11 @@ namespace BetterCandy
 {
     public sealed class Config : IConfig
     {
+
         [Description("If the plugin is enabled")]
         public bool IsEnabled { get; set; } = true;
+
+        public bool Debug { get; set; } = false;
 
         [Description("Number that the plugin will randomize between, like if the number is 5 it will be: 1-5")]
         public int MaxRandomizer { get; set; } = 10;

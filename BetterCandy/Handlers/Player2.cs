@@ -1,4 +1,6 @@
-﻿using Exiled.Events.EventArgs;
+﻿using System;
+using Exiled.Events.EventArgs;
+using Exiled.Events.EventArgs.Scp330;
 using UnityEngine;
 namespace BetterCandy.Handlers
 {
@@ -18,7 +20,7 @@ namespace BetterCandy.Handlers
                 ev.ShouldSever = false;
             }
 
-            int RandomNumber = Random.Range(1, plugin.Config.MaxRandomizer);
+            int RandomNumber = UnityEngine.Random.Range(1, plugin.Config.MaxRandomizer);
 
             if (RandomNumber == plugin.Config.ChoosenNumber)
             {

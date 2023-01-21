@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Features;
 using System;
+using Exiled.Events.Handlers;
 using Player = Exiled.Events.Handlers.Player;
 namespace BetterCandy
 {
@@ -16,13 +17,13 @@ namespace BetterCandy
 
             player = new Handlers.Player2(this);
 
-            Player.InteractingScp330 += player.OnInteractingWithScp330;
+            Scp330.InteractingScp330 += player.OnInteractingWithScp330;
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
-            Player.InteractingScp330 -= player.OnInteractingWithScp330;
+            Scp330.InteractingScp330 -= player.OnInteractingWithScp330;
 
             player = null;
 
