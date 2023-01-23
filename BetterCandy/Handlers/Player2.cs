@@ -1,6 +1,8 @@
 ﻿using System;
 using Exiled.Events.EventArgs;
 using Exiled.Events.EventArgs.Scp330;
+using InventorySystem.Items.Usables.Scp330;
+using Respawning;
 using UnityEngine;
 namespace BetterCandy.Handlers
 {
@@ -24,8 +26,7 @@ namespace BetterCandy.Handlers
 
             if (RandomNumber == plugin.Config.ChoosenNumber)
             {
-                ev.IsAllowed = false;
-                ev.Player.TryAddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Pink);
+                ev.Candy = CandyKindID.Pink;
             }
         }                    
     }
