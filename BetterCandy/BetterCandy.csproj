@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="Handlers\Player2.cs" />
+    <Compile Include="EventHandlers.cs" />
     <Compile Include="Plugin.cs" />
   </ItemGroup>
   <ItemGroup>

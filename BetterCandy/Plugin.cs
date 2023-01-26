@@ -6,18 +6,20 @@ namespace BetterCandy
 {
     public class Plugin : Plugin<Config>
     {
-        public override Version RequiredExiledVersion { get; } = new Version(6, 2, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(6, 0, 0);
         public override string Name { get; } = "BetterCandy";
-        public override Version Version { get; } = new Version(1, 1, 0);
+        public override Version Version { get; } = new Version(1, 2, 0);
 
-        public Handlers.Player2 player;
+        public EventHandlers EventHandlers;
+        public static Plugin Instance;
 
         public override void OnEnabled()
         {
 
-            player = new Handlers.Player2(this);
-
-            Scp330.InteractingScp330 += player.OnInteractingWithScp330;
+            EventHandlers = new EventHandlers();
+            Instance = this;
+            Player.Died += EventHandlers.OnDeath;
+            Scp330.InteractingScp330 += EventHandlers.OnInteractingWithScp330;
             
             base.OnEnabled();
             
@@ -25,10 +27,10 @@ namespace BetterCandy
 
         public override void OnDisabled()
         {
-            Scp330.InteractingScp330 -= player.OnInteractingWithScp330;
-
-            player = null;
-
+            Scp330.InteractingScp330 -= EventHandlers.OnInteractingWithScp330;
+            Player.Died -= EventHandlers.OnDeath;
+            EventHandlers = null;
+            Instance = null;
             base.OnDisabled();
         }
     }

@@ -12,6 +12,9 @@ namespace BetterCandy
         public bool IsEnabled { get; set; } = true;
 
         public bool Debug { get; set; } = false;
+        
+        public int MaxPinkPerLife { get; set; } = 1;
+
 
         [Description("Number that the plugin will randomize between, like if the number is 5 it will be: 1-5")]
         public int MaxRandomizer { get; set; } = 10;
